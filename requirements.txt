@@ -1,0 +1,8 @@
+pygame==2.6.1
+moderngl==5.10.0
+pyopencl==2024.2.7
+numpy==1.26.4
+msgpack==1.0.8
+watchdog==5.0.3
+comtypes==1.4.7; platform_system=="Windows"
+psutil==6.0.0

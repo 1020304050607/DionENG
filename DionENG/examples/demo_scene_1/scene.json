@@ -1,0 +1,319 @@
+{
+    "scene_name": "DemoArena",
+    "entities": [
+        {
+            "name": "Player",
+            "tags": ["player", "main"],
+            "components": {
+                "Transform": {
+                    "position": [0.0, 0.0, 2.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 1.0
+                },
+                "MeshRenderer": {
+                    "model_name": "cube.obj",
+                    "material": {
+                        "diffuse": [0.8, 0.2, 0.2],
+                        "specular": [1.0, 1.0, 1.0],
+                        "shininess": 32.0
+                    }
+                },
+                "Camera": {
+                    "fov": 60.0,
+                    "near": 0.1,
+                    "far": 1000.0,
+                    "aspect_ratio": 1.777
+                },
+                "Physics3D": {
+                    "mass": 1.0,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": false
+                },
+                "Script": {
+                    "script_name": "player_controller.py",
+                    "bindings": {
+                        "move_speed": 5.0,
+                        "jump_height": 2.0
+                    }
+                }
+            }
+        },
+        {
+            "name": "Enemy1",
+            "tags": ["enemy", "ai"],
+            "components": {
+                "Transform": {
+                    "position": [5.0, 0.0, 0.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 1.0
+                },
+                "MeshRenderer": {
+                    "model_name": "sphere.obj",
+                    "material": {
+                        "diffuse": [0.2, 0.8, 0.2],
+                        "specular": [0.5, 0.5, 0.5],
+                        "shininess": 16.0
+                    }
+                },
+                "TacticalAI": {
+                    "role": "enemy",
+                    "target": [0.0, 0.0, 2.0],
+                    "speed": 2.0,
+                    "pathfinding_grid_size": [10, 10]
+                },
+                "Physics3D": {
+                    "mass": 1.0,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": false
+                }
+            }
+        },
+        {
+            "name": "Enemy2",
+            "tags": ["enemy", "ai"],
+            "components": {
+                "Transform": {
+                    "position": [-5.0, 0.0, 0.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 1.0
+                },
+                "MeshRenderer": {
+                    "model_name": "sphere.obj",
+                    "material": {
+                        "diffuse": [0.2, 0.2, 0.8],
+                        "specular": [0.5, 0.5, 0.5],
+                        "shininess": 16.0
+                    }
+                },
+                "TacticalAI": {
+                    "role": "enemy",
+                    "target": [0.0, 0.0, 2.0],
+                    "speed": 2.0,
+                    "pathfinding_grid_size": [10, 10]
+                },
+                "Physics3D": {
+                    "mass": 1.0,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": false
+                }
+            }
+        },
+        {
+            "name": "DirectionalLight",
+            "tags": ["light"],
+            "components": {
+                "Transform": {
+                    "position": [0.0, 10.0, 0.0],
+                    "rotation": [-45.0, 0.0, 0.0],
+                    "scale": 1.0
+                },
+                "Light": {
+                    "type": "directional",
+                    "color": [1.0, 1.0, 1.0],
+                    "intensity": 1.0
+                }
+            }
+        },
+        {
+            "name": "PointLight1",
+            "tags": ["light"],
+            "components": {
+                "Transform": {
+                    "position": [3.0, 2.0, 3.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 1.0
+                },
+                "Light": {
+                    "type": "point",
+                    "color": [1.0, 0.5, 0.5],
+                    "intensity": 0.8,
+                    "range": 10.0
+                }
+            }
+        },
+        {
+            "name": "PointLight2",
+            "tags": ["light"],
+            "components": {
+                "Transform": {
+                    "position": [-3.0, 2.0, -3.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 1.0
+                },
+                "Light": {
+                    "type": "point",
+                    "color": [0.5, 0.5, 1.0],
+                    "intensity": 0.8,
+                    "range": 10.0
+                }
+            }
+        },
+        {
+            "name": "Ground",
+            "tags": ["environment", "static"],
+            "components": {
+                "Transform": {
+                    "position": [0.0, -1.0, 0.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 10.0
+                },
+                "MeshRenderer": {
+                    "model_name": "plane.obj",
+                    "material": {
+                        "diffuse": [0.5, 0.5, 0.5],
+                        "specular": [0.2, 0.2, 0.2],
+                        "shininess": 8.0
+                    }
+                },
+                "Physics3D": {
+                    "mass": 0.0,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": true
+                }
+            }
+        },
+        {
+            "name": "Wall1",
+            "tags": ["environment", "static"],
+            "components": {
+                "Transform": {
+                    "position": [0.0, 0.0, -10.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 5.0
+                },
+                "MeshRenderer": {
+                    "model_name": "cube.obj",
+                    "material": {
+                        "diffuse": [0.7, 0.7, 0.7],
+                        "specular": [0.3, 0.3, 0.3],
+                        "shininess": 16.0
+                    }
+                },
+                "Physics3D": {
+                    "mass": 0.0,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": true
+                }
+            }
+        },
+        {
+            "name": "Wall2",
+            "tags": ["environment", "static"],
+            "components": {
+                "Transform": {
+                    "position": [0.0, 0.0, 10.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 5.0
+                },
+                "MeshRenderer": {
+                    "model_name": "cube.obj",
+                    "material": {
+                        "diffuse": [0.7, 0.7, 0.7],
+                        "specular": [0.3, 0.3, 0.3],
+                        "shininess": 16.0
+                    }
+                },
+                "Physics3D": {
+                    "mass": 0.0,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": true
+                }
+            }
+        },
+        {
+            "name": "Prop1",
+            "tags": ["environment", "dynamic"],
+            "components": {
+                "Transform": {
+                    "position": [2.0, 0.0, 2.0],
+                    "rotation": [0.0, 45.0, 0.0],
+                    "scale": 1.0
+                },
+                "MeshRenderer": {
+                    "model_name": "cube.obj",
+                    "material": {
+                        "diffuse": [0.9, 0.9, 0.1],
+                        "specular": [0.5, 0.5, 0.5],
+                        "shininess": 32.0
+                    }
+                },
+                "Physics3D": {
+                    "mass": 0.5,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": false
+                }
+            }
+        },
+        {
+            "name": "Prop2",
+            "tags": ["environment", "dynamic"],
+            "components": {
+                "Transform": {
+                    "position": [-2.0, 0.0, -2.0],
+                    "rotation": [0.0, -45.0, 0.0],
+                    "scale": 1.0
+                },
+                "MeshRenderer": {
+                    "model_name": "cube.obj",
+                    "material": {
+                        "diffuse": [0.1, 0.9, 0.9],
+                        "specular": [0.5, 0.5, 0.5],
+                        "shininess": 32.0
+                    }
+                },
+                "Physics3D": {
+                    "mass": 0.5,
+                    "velocity": [0.0, 0.0, 0.0],
+                    "is_static": false
+                }
+            }
+        },
+        {
+            "name": "UIOverlay",
+            "tags": ["ui"],
+            "components": {
+                "Transform": {
+                    "position": [0.0, 0.0, 0.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 1.0
+                },
+                "Sprite": {
+                    "texture_name": "ui_hud.png",
+                    "size": [200, 50],
+                    "anchor": "top_left",
+                    "screen_position": [10, 10]
+                }
+            }
+        },
+        {
+            "name": "ScriptedTrigger",
+            "tags": ["trigger"],
+            "components": {
+                "Transform": {
+                    "position": [0.0, 0.0, 5.0],
+                    "rotation": [0.0, 0.0, 0.0],
+                    "scale": 2.0
+                },
+                "Script": {
+                    "script_name": "trigger_zone.py",
+                    "bindings": {
+                        "trigger_type": "proximity",
+                        "radius": 2.0,
+                        "action": "spawn_effect"
+                    }
+                }
+            }
+        }
+    ],
+    "settings": {
+        "ambient_light": [0.1, 0.1, 0.1],
+        "skybox": "default_skybox",
+        "physics_gravity": [0.0, -9.81, 0.0],
+        "render_settings": {
+            "dynamic_resolution_scale": 1.0,
+            "ray_tracing_enabled": true,
+            "shadow_quality": "high"
+        },
+        "quadtree_bounds": [[-20.0, -20.0], [20.0, 20.0]]
+    }
+}
