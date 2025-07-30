@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-# Notes:
-# - This is the MIT License, chosen for its simplicity and permissiveness.
-# - Replace "Your Name or Organization" with the actual copyright holder.
-# - The DionENG engine, including all Python scripts (e.g., main.py, dioneng/*),
-#   assets (e.g., default.png, fallback.obj), and documentation (e.g., README.md,
-#   CONTRIBUTING.md), is covered under this license.
-# - Contributors must agree to this license for their contributions.
-# - For questions about licensing, contact the maintainers via GitHub issues.
